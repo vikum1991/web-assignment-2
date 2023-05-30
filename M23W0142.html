@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        This Page is about Leap Year and 12 Horary Signs
+    </title>
+</head>
+
+<body bgcolor="#C7FAD5">
+    <center>
+        <h2>Leap Year and 12 Horary Signs</h2>
+        <div id="leapYear"></div>
+        <br>
+        <div id="horarySign"></div>
+        <br>
+        <div id="imageContainer"></div>
+    </center>
+
+
+    <script>
+
+        var leapYear1 = document.getElementById('leapYear');
+        var horarySign = document.getElementById('horarySign');
+
+
+        function number(rest) {
+    return rest % 12;
+}
+
+function outputImage(rest) {
+    const container = document.getElementById('imageContainer');
+
+    // Create an image element
+    const image = document.createElement('img');
+    const images = [
+        "image/monkey.jpeg",
+        "image/cock.jpeg",
+        "image/dog.jpeg",
+        "image/boar.jpeg",
+        "image/rat.jpeg",
+        "image/ox.jpeg",
+        "image/tiger.jpeg",
+        "image/hare.jpeg",
+        "image/dragon.jpeg",
+        "image/serpent.jpeg",
+        "image/horse.jpeg",
+        "image/sheep.jpeg"
+    ];
+
+    const imageIndex = number(rest);
+    
+        image.src = images[imageIndex];
+        image.width = 400;
+        image.height = 300;
+        container.appendChild(image);
+        console.log("img")
+    
+}
+
+var year = prompt("Please enter a year (e.g., 2023):");
+var rest = parseInt(year);
+    leapYear=rest;
+if (leapYear % 4 === 0) {
+    leapYear1.textContent = "Leap Year"
+    // document.write("Leap Year");
+  } else {
+    leapYear1.textContent = "Common Year"
+    // document.write("Common Year");
+  }
+
+rest = number(rest);
+
+
+        rest = number(rest);
+
+        if (rest === 0) {
+            horarySign.textContent = year + " Monkey";
+            outputImage(rest);
+        } else if (rest === 1) {
+            horarySign.textContent = year + " Cock";
+            outputImage(rest);
+        } else if (rest === 2) {
+            horarySign.textContent = year + " Dog";
+            outputImage(rest);
+            horarySign.textContent = year + " Boar";
+            outputImage(rest);
+        } else if (rest === 4) {
+            horarySign.textContent = year + " Rat";
+            outputImage(rest);
+        } else if (rest === 5) {
+            horarySign.textContent = year + " Ox";
+            outputImage(rest);
+        } else if (rest === 6) {
+            horarySign.textContent = year + " Tiger";
+            outputImage(rest);
+        } else if (rest === 7) {
+            horarySign.textContent = year + " Hare";
+            outputImage(rest);
+        } else if (rest === 8) {
+            horarySign.textContent = year + " Dragon";
+            outputImage(rest);
+        } else if (rest === 9) {
+            horarySign.textContent = year + " Serpent";
+            outputImage(rest);
+        } else if (rest === 10) {
+            horarySign.textContent = year + " Horse";
+            outputImage(rest);
+        } else if (rest === 11) {
+            horarySign.textContent = year + " Sheep";
+            outputImage(rest);
+        }
+    </script>
+    
+</body>
+</html>
